@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'O kurka działa!'
+    return 'Hello, World!'
 
 @app.route('/request')
 def request_info():
