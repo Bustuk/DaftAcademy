@@ -1,6 +1,9 @@
 # app.py
 from flask import Flask
 from flask import request
+from flask import redirect
+from flask_basicauth import BasicAuth
+
 app = Flask(__name__)
 
 app.config['BASIC_AUTH_USERNAME'] = 'TRAIN'
