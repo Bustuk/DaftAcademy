@@ -1,8 +1,6 @@
 # app.py
 from flask import Flask
 from flask import request
-from multiprocessing import Value
-from flask import json
 app = Flask(__name__)
 
 
@@ -12,9 +10,8 @@ def hello():
 
 @app.route('/counter')
 def index():
-    with counter.get_lock():
-        counter.value += 1
-    return json.jsonify(counter.value)
+    return "SIALAALALA"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
