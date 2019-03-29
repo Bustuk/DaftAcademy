@@ -44,7 +44,7 @@ def requires_basic_auth(func):
 @requires_basic_auth
 def login():
     session['username'] = request.authorization.username
-    return redirect('/hello/')
+    return redirect('/hello')
 
 
 def requires_user_session(func):
@@ -57,7 +57,7 @@ def requires_user_session(func):
     return wrapper
 template = Template('<p id="greeting"> Hello, {{user}}!</p>')
 
-@app.route('/hello/')
+@app.route('/hello')
 @requires_user_session
 def hello():
     x=session['username']
