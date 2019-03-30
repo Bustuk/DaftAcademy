@@ -141,7 +141,7 @@ def fishes():
            methods=['GET', 'PUT', 'PATCH', 'DELETE'])
 def fish(fish_id):
     if fish_id not in app.fishes:
-        return 'No such fish', 404
+        return 'No such fish', 204
 
     if request.method == 'DELETE':
         del app.fishes[fish_id]
