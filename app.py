@@ -84,7 +84,7 @@ def requires_basic_auth(func):
 @requires_basic_auth
 def login():
     session['username'] = request.authorization.username
-    return redirect('/hello/')
+    return redirect('/hello')
 
 
 def requires_user_session(func):
