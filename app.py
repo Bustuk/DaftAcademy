@@ -97,7 +97,7 @@ def requires_user_session(func):
     return wrapper
 template = Template('<p id="greeting"> Hello, {{user}}!</p>')
 
-@app.route('/hello/')
+@app.route('/hello')
 @requires_user_session
 def hello():
     x=session['username']
