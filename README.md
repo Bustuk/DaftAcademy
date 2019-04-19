@@ -6,7 +6,7 @@ Course repository: https://github.com/daftcode/daftacademy-python_levelup-spring
 
 Instructions for each task are in homework-xxx/tasks.txt
 
-The sollutions are deployed on https://testowanieapkiweflasku.herokuapp.com/
+The sollutions for -flask,-login,-sqlite are deployed on https://testowanieapkiweflasku.herokuapp.com/
 
 ## Agenda
 ![Plan zajęć](https://raw.githubusercontent.com/daftcode/daftacademy-python_levelup-spring2019/master/plan_zajec.jpg)
