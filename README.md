@@ -6,5 +6,4 @@ Course repository: https://github.com/daftcode/daftacademy-python_levelup-spring
 
 Instructions for each task are in homework-xxx/tasks.txt
 
-## Agenda
-![Plan zajęć](https://raw.githubusercontent.com/daftcode/daftacademy-python_levelup-spring2019/master/plan_zajec.jpg)
+
