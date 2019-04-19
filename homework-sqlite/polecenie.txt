@@ -1,0 +1,17 @@
+1. Stwórz endpoint /tracks
+ - zwraca w JSONie listę wszystkich nazw utwórów w tabeli 'tracks'. Kolejsność nazw utwórów powinna być alfabetyczna
+ 2. Dodaj obsługę parametru 'artist' do uprzednio stworzonego endpointu
+ - parametr '?artist=AC/DC' ma spowodować zwrócenie w JSONie listy z nazwami utworów, które są odegrane przez zespół AC/DC
+ - AC/DC jest tylko przykładem, funckja powinna obsługiwać różnych wykonawców
+ - wyniki powinny być zwrócone w kolejności alfabetycznej
+ 3. Dodaj do endpointu /tracks możliwość dzielenia wyniku na strony:
+ - obsługa parametru ?per_page=10 - ilość wyników na stronie,
+ - obsługa parametru ?page=1 - strona z której pokażą się wyniki. Pierwsza strona powinna mieć numer 1
+ - rozwiązanie powinno działać porawnie z wcześniej obsługiwanymi parametrami - lub ich brakiem
+ 4. Dodaj do endpointu /tracks
+ - możliwość dodawania nowych kawałków (POST JSON)
+ - stworzenie nowego obiektu powinno objawić się zwróconym kodem 200
+ - niestworzenie obiektu powinno objawić się zwróconym kodem 400 jeśli przesłane dane będą niekompletne, 
+   można pokusić się o dodatkowe pole errors w zwracanym JSONie, które mówiłoby co poszło nie tak.
+ 5. Dodaj nowy endpoint /genres
+ - zwrócić JSON w którym klucze to nazwy gatunków, a wartości to ilość utworów przynależących do danego gatunku
