@@ -1,6 +1,3 @@
-Napisz dekorator @to_list,  który opakowuje funkcję zwracającą tekst (iterable)
-oraz zwraca jej znaki (elementy) w postaci jednowymiarowej listy.
-
 def to_list(func):
   def iter():
     x=func()
@@ -10,10 +7,6 @@ def to_list(func):
     return result
   return iter
   
-Napisz dekorator @is_correct,  który opakowuje funkcję zwracającą słownik. 
-Dekorator ma sprawdzić czy w słowniku znajdują się klucze zawarte w argumentach dekoratora. 
-Jeśli tak niech zwróci ten słownik, jeśli nie, niech zwraca wartość None.
-
 def is_correct(*args):
     list=[]
     for element in args:
@@ -47,10 +40,6 @@ def is_correct(*args):
         return wrapped_f
     return wrap
     
-Napisz dekorator @add_date,  który opakowuje funkcję zwracającą słownik. 
-Dekorator ma dodać aktualną datę do zwracanego przez dekorowaną funkcję słownika w formacie podanym jako argument dekoratora.
-Użyj modułu datetime korzystając z datetime.datetime.now() do pobrania aktualnej daty.
-
 import datetime
 
 def add_date(format):
