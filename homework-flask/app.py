@@ -32,7 +32,7 @@ number = 0
 @app.route('/counter')
 def index():
     global number
-    number+=1
+    number += 1
     return str(number)
 
 if __name__ == '__main__':
