@@ -1,0 +1,14 @@
+1. Stwórz endpoint /longest_tracks, który zwróci listę 10 wierszy z tabeli (reprezentowanych jako słowniki) `track` w formacie json,
+który reprezentują top 10 najdłuższych utworów w bazie w kolejności od najdłuższego do najkrótszego (pole milliseconds).
+
+2. Stwórz endpoint `/longest_tracks_by_artist` który zachowuje się tak samo jak poprzedni, 
+ale dodatkowo przekazuje parametr `?artist=<artist>` i zwraca w jsonie listę z 10cioma najdłuższymi utworami 
+(tj z ich reprezentacją w formacie json) danego wykonawcy. Jeśli wykonawcy nie ma bazy proszę zwrócić status 404.
+
+3. Dodaj endpoint `artists` wg poniższej specyfikacji:
+- możliwość dodawania nowych artystów (POST JSON)
+- stworzenie nowego obiektu powinno objawić się zwróconym kodem 200
+- niestworzenie obiektu powinno objawić się zwróconym kodem 400
+4.Dodaj nowy endpoint '/count_songs', który przyjmuje requesty GET z parametrem `artist` i zwraca jsona
+w którym klucz to nazwa artysty lub artystów jeśli podano ich kilku, a wartości to ilość piosenek danego artysty. 
+Więcej niż jeden artysta będzie podany w urlu w następujący sposób - `?artist=<artist_1>,<artist_2>,<artist_3>(...)<artist_n>
