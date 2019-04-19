@@ -1,0 +1,91 @@
+1. Wykonaj endpoint:
+'/' - GET
+2. Wykonaj endpoint:
+'/login' - POST
+na którym to możemy zalogować się do konta za pomocą poniższych sekretów:
+login: TRAIN
+pass: TuN3L
+Po udanym logowaniu zostajemy przekierowani na endpoint '/hello'.
+Autoryzacji dokonujemy poprzez BasicAuth.
+
+3.Kolejny endpoint '/logout' powinien:
+- obsługiwać metodę POST
+- być dostępny tylko dla zalogowanych użytkowników.
+- gdy użytkownik nie jest zalogowany to przekieruj na '/login'
+Po wykonaniu akcji, użytkownik powinien stracić możliwość korzystania z
+chronionych endpointów ('/trains', '/logout', ...) i zostać przekierowany na
+'/'.
+
+
+4. Kolejny endpoint '/hello' powienien:
+- obsługiwać metodę GET
+- być dostępny tylko dla zalogowanych użytkowników
+- przekierowywać na '/login' gdy użytkownik nie jest zalogowany
+- zwracać pooprawny HTML z powitaniem
+
+Poprawny dokument HTML powinien zawierać dowolny element (np. <p>, <h1>) z
+atrybutem 'id=greeting'. Tekst powitania powinien być taki:
+'Hello, {{ user }}!'.
+
+
+5. Kolejny endpoint '/trains' powinien:
+- Obsługiwać metody - POST i GET
+- być dostępny tylko dla zalogowanych użytkowników.
+- powinien obsługiwać query_string w postaci ?format=json kóry spowoduje zwrócenie
+  danych w formacie JSON
+- domyślne odpowiada XML
+
+POST:
+Jak zobaczysz jakiś pociąg, to ta akcja umożliwi Ci dodanie tej obserwacji.
+format: json, wg. specyfikacji:
+
+{
+    "who": "JA",
+    "where": "Wąchock",
+    "trucks": 21,
+    "locomotive": "gama",
+    "date": "2019-01-01"
+}
+
+gdzie:
+    "who" → STRING
+    "where" → STRING
+    "trucks" → INT
+    "locomotive" → STRING
+    "date" → STRING
+
+po pomyślnie dodanej obserwacji, powinniśmy być przekierowani na adres:
+'/trains/<id>?format=json'
+
+GET:
+Metoda powinna zwrócić wszystkie dodane wcześniej dane pociągów.
+Format odpowiedzi w postaci jsona (w przypadku dodania '/trains?format=json'):
+{
+    "uuid_1": {
+        "who": "JA",
+        "where": "Wąchock",
+        "trucks": 21,
+        "locomotive": "gama",
+        "date": "2019-01-01"
+    },
+    "uuid_2": {
+        "who": "TY",
+        "where": "Tunel",
+        "trucks": 2,
+        "locomotive": "Marathon",
+        "date": "2019-01-02"
+    }
+}
+
+
+6. Kolejny endpoint '/trains/<id>' powinen:
+- Obsługiwać metody - DELETE i GET
+- Endpoint tylko dla zalogowanych użytkowników
+- powinien obsługiwać query_string w postaci ?format=json, kóry spowoduje zwrócenie
+  danych w formacie JSON
+
+GET:
+Zwraca informacje o id'tej obserwacji pociągu.
+
+DELETE:
+Usuwamy id'tą obserwację pociągu.
