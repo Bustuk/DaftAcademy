@@ -1,0 +1,10 @@
+1. Napisz dekorator @to_list,  który opakowuje funkcję zwracającą tekst (iterable)
+oraz zwraca jej znaki (elementy) w postaci jednowymiarowej listy.
+
+2. Napisz dekorator @is_correct,  który opakowuje funkcję zwracającą słownik. 
+Dekorator ma sprawdzić czy w słowniku znajdują się klucze zawarte w argumentach dekoratora. 
+Jeśli tak niech zwróci ten słownik, jeśli nie, niech zwraca wartość None.
+
+3. Napisz dekorator @add_date,  który opakowuje funkcję zwracającą słownik. 
+Dekorator ma dodać aktualną datę do zwracanego przez dekorowaną funkcję słownika w formacie podanym jako argument dekoratora.
+Użyj modułu datetime korzystając z datetime.datetime.now() do pobrania aktualnej daty.
